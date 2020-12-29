@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { truncate } = require('./User');
 
-class Project extends Model {}
+class Owner extends Model {}
 
-Project.init(
+Owner.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,28 +12,22 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone: {
       type: DataTypes.STRING,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
+    zip: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+    },
+    bio: {
+      type: DataTypes.TEXT,
     },
   },
   {
@@ -40,8 +35,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'owner',
   }
 );
 
-module.exports = Project;
+module.exports = Owner;
