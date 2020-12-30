@@ -8,8 +8,6 @@ const seedAll = async () => {
 
   await seedPet();
 
-  await seedUser();
-
   await seedOwner();
 
   process.exit(0);
