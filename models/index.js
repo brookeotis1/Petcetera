@@ -7,6 +7,15 @@ User.hasMany(Pet, {
   onDelete: 'CASCADE',
 });
 
+// Owner.belongsTo(User, {
+//   foreignKey: 'user_id',
+// });
+
+Owner.hasMany(Pet, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
+
 Pet.belongsTo(User, {
   foreignKey: 'user_id',
 });
