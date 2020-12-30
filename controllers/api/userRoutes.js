@@ -47,11 +47,18 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+<<<<<<< HEAD:Main/controllers/api/userRoutes.js
       req.session.loggedIn = true;
 
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
+=======
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+>>>>>>> 2cdbdd3f4032f36acda5ff6b220f47a74c70ea9a:controllers/api/userRoutes.js
     });
   } catch (err) {
     console.log(err);
