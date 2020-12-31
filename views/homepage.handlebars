@@ -77,12 +77,21 @@
 
   <!-- Page Container -->
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- Profile -->
+    <div class="w5-card w5-round w5-white">
+      <div class="w3-container">
+        <h4 class="w3-center">{{owner.firstName}} {{owner.lastName}}</h4>
+        <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Owner Pic"></p>
+        <hr>
+        <p><i class="fa fa-heart-o fa-fw w3-margin-right w3-text-theme"></i>{{bio}}</p>
+      </div>
+    </div>
     <!-- The Grid -->
     <div class="w3-row">
       <!-- Left Column -->
-      <div class="w3-col m3">
+      <div class="w5-col m5">
         <!-- Profile -->
-        <div class="w3-card w3-round w3-white">
+        <div class="w5-card w5-round w5-white">
           <div class="w3-container">
             <h4 class="w3-center">{{PetName}}</h4>
             <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Pet Pic"></p>
