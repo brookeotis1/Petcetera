@@ -1,9 +1,34 @@
 const router = require('express').Router();
 const { Owner } = require('../../models');
-const withAuth = require('../../utils/auth');
+//const withAuth = require('../../utils/auth');
+
+// GET one owner
+router.get('/owner/:id', async (req, res) => {
+  // If the user is not logged in, redirect the user to the login page
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+    // If the user is logged in, allow them to view the owner
+    try {
+      const dbOwnerData = await Owner.findByPk(req.params.id, {
+        include: [
+          {
+            model: Pet,
+            attributes: ['id', 'petname', 'nickname', 'species', 'breed'],
+          },
+        ],
+      });
+      const owner = dbOwnerData.get({ plain: true });
+      res.render('owner', { owner, loggedIn: req.session.loggedIn });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  }
+});
 
 //creates new owner
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newOwner = await Owner.create({
       ...req.body,
@@ -18,7 +43,7 @@ router.post('/', withAuth, async (req, res) => {
 
 //delete owner
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const ownerData = await Owner.destroy({
       where: {
