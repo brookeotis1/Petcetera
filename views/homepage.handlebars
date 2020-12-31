@@ -33,154 +33,171 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" src="style.css"></link>
+<link rel="stylesheet" src="style.css">
+</link>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="script.js"></script>
 <style>
-html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Open Sans", sans-serif
+  }
 </style>
+
 <body class="w3-theme-l5" class="pet">
 
-<!-- Navbar -->
-<div class="w3-top">
+  <!-- Navbar -->
+  <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Petcetera</a>
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Forum"><i class="fa fa-globe"></i></a>
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
-     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-     </a>
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i
+          class="fa fa-home w3-margin-right"></i>Petcetera</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Forum"><i
+          class="fa fa-globe"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+        title="Account Settings"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i
+          class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+        title="My Account">
+      </a>
     </div>
-   </div>
-   
-   <!-- Navbar on small screens -->
-   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-     <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-   </div>
-   
-   <!-- Page Container -->
-   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-     <!-- The Grid -->
-     <div class="w3-row">
-       <!-- Left Column -->
-       <div class="w3-col m3">
-         <!-- Profile -->
-         <div class="w3-card w3-round w3-white">
-           <div class="w3-container">
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+  </div>
+
+  <!-- Page Container -->
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div class="w3-col m3">
+        <!-- Profile -->
+        <div class="w3-card w3-round w3-white">
+          <div class="w3-container">
             <h4 class="w3-center">{{PetName}}</h4>
             <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Pet Pic"></p>
             <hr>
             <p><i class="fa fa-heart-o fa-fw w3-margin-right w3-text-theme"></i>{{Species}}</p>
-         <p><i class="fa fa-heart fa-fw w3-margin-right w3-text-theme"></i>{{Breed}}</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{Address}}</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{Birthdate}}</p>
-         <p><i class="fa fa-microchip fa-fw w3-margin-right w3-text-theme"></i>{{MicrochipID}}</p>
+            <p><i class="fa fa-heart fa-fw w3-margin-right w3-text-theme"></i>{{Breed}}</p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{Address}}</p>
+            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{Birthdate}}</p>
+            <p><i class="fa fa-microchip fa-fw w3-margin-right w3-text-theme"></i>{{MicrochipID}}</p>
+          </div>
         </div>
-         </div>
-         <br>
-             
-       <!-- End Left Column -->
-       </div>
-       
-       <!-- Middle Column -->        
-         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <h4><i class="fa fa-location-arrow fa-fw w3-margin-right w3-text-theme"></i>View Providers Near You</h4><br>
-            <div id="yelpResults"></div>
-            <button onclick="getLocation()">Allow Access to Location</button>
-            <p>Enter Type</p>
-            <input class="w3-input w3-border" type="text" placeholder="dog salons" id="searchProv">
-            <p id="demo"></p>
-            <p><button onclick="yelpSearch()" class="w3-button w3-dark-grey" id="yelpBtn">Search</button></p>
-        </div>        
-         
-       <!-- End Middle Column -->
-       </div>
-       
-            
-     <!-- End Grid -->
-     </div>
-     
-   <!-- End Page Container -->
-   </div>
-   <br>
-   
-   <!-- Footer -->
-    <footer class="w3-container w3-theme-d5">
-     <p>Petcetera</p>
-   </footer>
-    
+        <br>
+
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Middle Column -->
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <h4><i class="fa fa-location-arrow fa-fw w3-margin-right w3-text-theme"></i>View Providers Near You</h4><br>
+        <div id="yelpResults"></div>
+        <button onclick="getLocation()">Allow Access to Location</button>
+        <p>Enter Type</p>
+        <input class="w3-input w3-border" type="text" placeholder="dog salons" id="searchProv">
+        <p id="demo"></p>
+        <p><button onclick="yelpSearch()" class="w3-button w3-dark-grey" id="yelpBtn">Search</button></p>
+      </div>
+
+      <!-- End Middle Column -->
+    </div>
+
+
+    <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+  </div>
+  <br>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-theme-d5">
+    <p>Petcetera</p>
+  </footer>
+
   <script>
     //User Location
-  var x = document.getElementById("demo");
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
+    var x = document.getElementById("demo");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
     }
-  }
 
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-    var latitude = position.coords.latitude;
-    localStorage.setItem("lat", latitude);
-    var longitude = position.coords.longitude;
-    localStorage.setItem("long", longitude);
-  }
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+      var latitude = position.coords.latitude;
+      localStorage.setItem("lat", latitude);
+      var longitude = position.coords.longitude;
+      localStorage.setItem("long", longitude);
+    }
 
-//Yelp API search 
-$("#yelpBtn").on("click", function () {
-    var provInput = document.getElementById("searchProv").value;
-    localStorage.setItem("provTerm", provInput);
-    const settings = {
+    //Yelp API search 
+    $("#yelpBtn").on("click", function () {
+      var provInput = document.getElementById("searchProv").value;
+      localStorage.setItem("provTerm", provInput);
+      const settings = {
         "async": true,
         "crossDomain": true,
         "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search",
         "method": "GET",
         "headers": {
-            "authorization": "Bearer OtPHKCuY1jmOsGPUZzwRiTMPh801290sRO3XbX026ZzZ2WD5lrTKhwb5WLX9tk_vsi_HJA_dvlqm8Y8mVfiCsWilSh9jwSykvB1QcsLTFEhmcGqvOSxFrnx8fCarX3Yx",
+          "authorization": "Bearer OtPHKCuY1jmOsGPUZzwRiTMPh801290sRO3XbX026ZzZ2WD5lrTKhwb5WLX9tk_vsi_HJA_dvlqm8Y8mVfiCsWilSh9jwSykvB1QcsLTFEhmcGqvOSxFrnx8fCarX3Yx",
         },
         "data": {
-            "term": localStorage.getItem('provTerm'),
-            "latitude": localStorage.getItem('lat'),
-            "longitude": localStorage.getItem('long'),
+          "term": localStorage.getItem('provTerm'),
+          "latitude": localStorage.getItem('lat'),
+          "longitude": localStorage.getItem('long'),
         }
-    };
+      };
 
-    //Display Yelp Results
-    $.ajax(settings).done(function (response) {
+      //Display Yelp Results
+      $.ajax(settings).done(function (response) {
         var yelpBusiness = response.businesses;
         let yelpResults;
         for (let i = 0; i < 30; i++) {
-            let yelpName = yelpBusiness[i].name
-            let yelpURL = yelpBusiness[i].url
-            yelpResults = document.createElement('div');
-            yelpResults.id = "yelp"; //Assign div id
-            yelpResults.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
-            yelpResults.style.background = "white";
-            a = document.createElement('a');
-            a.href = yelpURL; // Insted of calling setAttribute 
-            a.innerHTML = yelpName // <a>INNER_TEXT</a>
-            yelpResults.appendChild(a); // Append the link to the div
-            $("#yelpResults").prepend(yelpResults); // And append the div to the document body
+          let yelpName = yelpBusiness[i].name
+          let yelpURL = yelpBusiness[i].url
+          yelpResults = document.createElement('div');
+          yelpResults.id = "yelp"; //Assign div id
+          yelpResults.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
+          yelpResults.style.background = "white";
+          a = document.createElement('a');
+          a.href = yelpURL; // Insted of calling setAttribute 
+          a.innerHTML = yelpName // <a>INNER_TEXT</a>
+          yelpResults.appendChild(a); // Append the link to the div
+          $("#yelpResults").prepend(yelpResults); // And append the div to the document body
         }
+      })
     })
-})
 
 
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
 
-   
-   </body>
-   </html> 
+
+</body>
+
+</html>
