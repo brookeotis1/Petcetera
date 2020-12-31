@@ -19,7 +19,7 @@ router.get('/owner/:id', async (req, res) => {
         ],
       });
       const owner = dbOwnerData.get({ plain: true });
-      res.render('owner', { owner, loggedIn: req.session.loggedIn });
+      res.render('ownerProfile', { owner, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
