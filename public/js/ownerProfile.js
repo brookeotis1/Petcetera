@@ -1,9 +1,9 @@
-const newFormHandler = async (event) => {
+const createOwnerFormHandler = async (event) => {
   event.preventDefault();
 
-  const firstName = document.querySelector('#owner-firstName').value.trim();
-  const lastName = document.querySelector('#owner-lastName').value.trim();
-  const bio = document.querySelector('#owner-bio').value.trim();
+  const firstName = document.querySelector('#firstName').value.trim();
+  const lastName = document.querySelector('#lastName').value.trim();
+  const bio = document.querySelector('#bio').value.trim();
 
   if (firstName && lastName && bio) {
     const response = await fetch(`/api/owner`, {
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/ownerProfile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create Owner Profile');
     }
   }
 };
@@ -39,9 +39,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-owner-form')
+  .querySelector('.ownerProfile-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.new-owner-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.ownerProfile-list')
+//   .addEventListener('click', delButtonHandler);
