@@ -5,6 +5,6 @@ const ownerRoutes = require('./ownerRoutes');
 
 router.use('/users', userRoutes);
 //router.use('/pet', petRoutes);
-router.use('/owner', ownerRoutes);
+//router.use('/owner', ownerRoutes);
 
 module.exports = router;

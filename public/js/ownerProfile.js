@@ -40,7 +40,7 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.ownerProfile-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', createOwnerFormHandler);
 
 // document
 //   .querySelector('.ownerProfile-list')
