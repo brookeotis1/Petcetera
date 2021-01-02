@@ -8,10 +8,15 @@ router.get('/', async (req, res) => {
     const loggedIn = req.session.loggedIn;
     console.log(loggedIn);
     if (loggedIn) {
-      res.render('homepage', {
-        //Pass the logged in flag to the template
-        loggedIn: req.session.loggedIn,
-      });
+      const userId = req.session.user_id;
+      if (userId === undefined) {
+        res.render('ownerForm');
+      } else {
+        res.render('homepage', {
+          //Pass the logged in flag to the template
+          loggedIn: req.session.loggedIn,
+        });
+      }
     } else {
       console.log(req.session);
       res.render('login', {});
