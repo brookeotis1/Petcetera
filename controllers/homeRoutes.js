@@ -5,18 +5,22 @@ const { User } = require('../models');
 // Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      // attributes: { exclude: ['password'] },
-      // order: [['name', 'ASC']],
-    });
-
-    //   const users = userData.get({ plain: true });
-
-    res.render('homepage', {
-      //...users,
-      //Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
-    });
+    const loggedIn = req.session.loggedIn;
+    console.log(loggedIn);
+    if (loggedIn) {
+      const userId = req.session.user_id;
+      if (userId === undefined) {
+        res.render('ownerForm');
+      } else {
+        res.render('homepage', {
+          //Pass the logged in flag to the template
+          loggedIn: req.session.loggedIn,
+        });
+      }
+    } else {
+      console.log(req.session);
+      res.render('login', {});
+    }
   } catch (err) {
     res.status(500).json(err);
   }
