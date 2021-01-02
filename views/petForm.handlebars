@@ -1,102 +1,68 @@
-Skip to content
-Search or jump to…
+<div class="container">
+  <form action="action_page.php">
 
-Pull requests
-Issues
-Marketplace
-Explore
+    <label for="pname">Pet Name</label>
+    <input type="text" id="pname" name="petname" placeholder="Pet name..">
 
-@brendancer
-brianneewell1
-/
-debugpetproject
-1
-00
-Code
-Issues
-5
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-debugpetproject/views/petForm.handlebars
-@brendancer
-brendancer ?
-Latest commit 5cfd2db 1 minute ago
-History
-2 contributors
-@brendancer@brookeotis1
-142 lines (111 sloc) 4.14 KB
+    <label for="nname">Pet Nickname</label>
+    <input type="text" id="nname" name="nickname" placeholder="Pet Nickname..">
 
-<<<<<<< HEAD <<<<<<< HEAD=======>>>>>>> 255964bccd150f5a166a745a4554ae5c91292b39
+    <label for="species">Species</label>
+    <select id="species" name="species">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="bunny">Bunny</option>
+      <option value="rat">Rat</option>
+      <option value="hamster">Hamster</option>
+      <option value="guineaPig">Guinea Pig</option>
+      <option value="turtle">Turtle</option>
+      <option value="bird">Bird</option>
+      <option value="ferret">Ferret</option>
+    </select>
 
-  <div class="container">
-    <form action="action_page.php">
+    <label for="nname">Pet Breed</label>
+    <input type="text" id="breed" name="petbreed" placeholder="Breed..">
 
-      <label for="pname">Pet Name</label>
-      <input type="text" id="pname" name="petname" placeholder="Pet name..">
+    <label for="nname">Zip Code</label>
+    <input type="text" id="zip" name="zip" placeholder="Zip Code..">
 
-      <label for="nname">Pet Nickname</label>
-      <input type="text" id="nname" name="nickname" placeholder="Pet Nickname..">
+    <label for="nname">Pet Birthdate</label>
+    <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
 
-      <label for="species">Species</label>
-      <select id="species" name="species">
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="bunny">Bunny</option>
-        <option value="rat">Rat</option>
-        <option value="hamster">Hamster</option>
-        <option value="guineaPig">Guinea Pig</option>
-        <option value="turtle">Turtle</option>
-        <option value="bird">Bird</option>
-        <option value="ferret">Ferret</option>
-      </select>
+    <label for="nname">Pet Weight</label>
+    <input type="text" id="weight" name="petweight" placeholder="Pet Weight..">
 
-      <label for="nname">Pet Breed</label>
-      <input type="text" id="breed" name="petbreed" placeholder="Breed..">
+    <label for="nname">Pet Allergies</label>
+    <input type="text" id="allergies" name="allergies" placeholder="Pet Allergies..">
 
-      <label for="nname">Zip Code</label>
-      <input type="text" id="zip" name="zip" placeholder="Zip Code..">
+    <label for="nname">Pet Food</label>
+    <input type="text" id="pfood" name="petfood" placeholder="Pet Food..">
 
-      <label for="nname">Pet Birthdate</label>
-      <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
-
-      <label for="nname">Pet Weight</label>
-      <input type="text" id="weight" name="petweight" placeholder="Pet Weight..">
-
-      <label for="nname">Pet Allergies</label>
-      <input type="text" id="allergies" name="allergies" placeholder="Pet Allergies..">
-
-      <label for="nname">Pet Food</label>
-      <input type="text" id="pfood" name="petfood" placeholder="Pet Food..">
-
-      <label for="nname">Microchip ID</label>
-      <input type="text" id="micro" name="microchip" placeholder="Microchip ID..">
+    <label for="nname">Microchip ID</label>
+    <input type="text" id="micro" name="microchip" placeholder="Microchip ID..">
 
 
-      <input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 
-    </form>
-  </div>
+  </form>
+</div>
 
-  {{#if pets.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Pets:</h3>
+{{#if pets.length}}
+<div class="col-md-6 project-list">
+  <h3>Current Pets:</h3>
 
-    {{#each pets as |pet|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/pet/{{pet.id}}">{{pet.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{pet.id}}">DELETE</button>
-      </div>
+  {{#each pets as |pet|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/pet/{{pet.id}}">{{pet.name}}</a></h4>
     </div>
-    {{/each}}
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" data-id="{{pet.id}}">DELETE</button>
+    </div>
   </div>
-  {{/if}}
-  </div>
+  {{/each}}
+</div>
+{{/if}}
+</div>
 
-  <script src="./js/pet.js"></script
+<script src="./js/pet.js"></script
