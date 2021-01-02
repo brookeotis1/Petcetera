@@ -1,63 +1,102 @@
-<div class="row justify-space-between-md">
-  <div class="ownerProfile-card">
-    <h2 class="page-title">Pet Profile</h2>
-    <form class="form ownerProfile-form">
+Skip to content
+Search or jump to…
 
-      <div class="form-group">
-        <label for="petName">Pet Name:</label>
-        <input class="form-input" type="text" id="petName" />
-      </div>
+Pull requests
+Issues
+Marketplace
+Explore
 
-      <div class="form-group">
-        <label for="nickname">Nickname:</label>
-        <input class="form-input" type="text" id="nickname" />
-      </div>
+@brendancer
+brianneewell1
+/
+debugpetproject
+1
+00
+Code
+Issues
+5
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+debugpetproject/views/petForm.handlebars
+@brendancer
+brendancer ?
+Latest commit 5cfd2db 1 minute ago
+History
+2 contributors
+@brendancer@brookeotis1
+142 lines (111 sloc) 4.14 KB
 
-      <div class="form-group">
-        <label for="species">Species:</label>
-        <input class="form-input" type="text" id="species" />
-      </div>
+<<<<<<< HEAD <<<<<<< HEAD=======>>>>>>> 255964bccd150f5a166a745a4554ae5c91292b39
 
-      <div class="form-group">
-        <label for="breed">Breed:</label>
-        <input class="form-input" type="text" id="breed" />
-      </div>
+  <div class="container">
+    <form action="action_page.php">
 
-      <div class="form-group">
-        <label for="zip">Zipcode:</label>
-        <input class="form-input" type="text" id="zip" />
-      </div>
+      <label for="pname">Pet Name</label>
+      <input type="text" id="pname" name="petname" placeholder="Pet name..">
 
-      <div class="form-group">
-        <label for="birthdate">Birth/Adoption Date:</label>
-        <input class="form-input" type="text" id="birthdate" />
-      </div>
+      <label for="nname">Pet Nickname</label>
+      <input type="text" id="nname" name="nickname" placeholder="Pet Nickname..">
 
-      <div class="form-group">
-        <label for="weight">Weight:</label>
-        <input class="form-input" type="text" id="weight" />
-      </div>
+      <label for="species">Species</label>
+      <select id="species" name="species">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bunny">Bunny</option>
+        <option value="rat">Rat</option>
+        <option value="hamster">Hamster</option>
+        <option value="guineaPig">Guinea Pig</option>
+        <option value="turtle">Turtle</option>
+        <option value="bird">Bird</option>
+        <option value="ferret">Ferret</option>
+      </select>
 
-      <div class="form-group">
-        <label for="allergies">Allergies:</label>
-        <input class="form-input" type="text" id="allergies" />
-      </div>
+      <label for="nname">Pet Breed</label>
+      <input type="text" id="breed" name="petbreed" placeholder="Breed..">
 
-      <div class="form-group">
-        <label for="food">Food:</label>
-        <input class="form-input" type="text" id="food" />
-      </div>
+      <label for="nname">Zip Code</label>
+      <input type="text" id="zip" name="zip" placeholder="Zip Code..">
 
-      <div class="form-group">
-        <label for="microchipId">Microchip Number:</label>
-        <input class="form-input" type="text" id="microchipId" />
-      </div>
+      <label for="nname">Pet Birthdate</label>
+      <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
 
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Create Pet Profile</button>
-      </div>
+      <label for="nname">Pet Weight</label>
+      <input type="text" id="weight" name="petweight" placeholder="Pet Weight..">
+
+      <label for="nname">Pet Allergies</label>
+      <input type="text" id="allergies" name="allergies" placeholder="Pet Allergies..">
+
+      <label for="nname">Pet Food</label>
+      <input type="text" id="pfood" name="petfood" placeholder="Pet Food..">
+
+      <label for="nname">Microchip ID</label>
+      <input type="text" id="micro" name="microchip" placeholder="Microchip ID..">
+
+
+      <input type="submit" value="Submit">
+
     </form>
   </div>
 
+  {{#if pets.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Pets:</h3>
 
-  <script src="./js/ownerProfile.js"></script>
+    {{#each pets as |pet|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/pet/{{pet.id}}">{{pet.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{pet.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+  </div>
+
+  <script src="./js/pet.js"></script
