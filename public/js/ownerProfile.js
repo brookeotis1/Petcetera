@@ -8,6 +8,7 @@ const OwnerFormHandler = async (event) => {
   const bio = document.querySelector('#bio').value.trim();
 
   if (firstName && lastName && bio) {
+    console.log('made it');
     const response = await fetch(`/api/owner`, {
       method: 'POST',
       body: JSON.stringify({ firstName, lastName, phone, zip, bio }),
