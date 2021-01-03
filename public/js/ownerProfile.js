@@ -7,9 +7,9 @@ const OwnerFormHandler = async (event) => {
   const zip = document.querySelector('#zip').value.trim();
   const bio = document.querySelector('#bio').value.trim();
 
-  if (firstName && lastName && bio) {
+  if (firstName && lastName && phone && zip && bio) {
     console.log('made it');
-    const response = await fetch(`/api/owner`, {
+    const response = await fetch(`/api/owner/owner`, {
       method: 'POST',
       body: JSON.stringify({ firstName, lastName, phone, zip, bio }),
       headers: {
@@ -20,7 +20,7 @@ const OwnerFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/ownerProfile');
     } else {
-      alert('Failed to create Owner Profile');
+      alert('Failed to create My Owner Profile');
     }
   }
 };
