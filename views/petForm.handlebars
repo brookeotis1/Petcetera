@@ -1,3 +1,4 @@
+
 <div class="container">
   <form action="action_page.php">
 
@@ -31,38 +32,3 @@
 
     <label for="nname">Pet Weight</label>
     <input type="text" id="weight" name="petweight" placeholder="Pet Weight..">
-
-    <label for="nname">Pet Allergies</label>
-    <input type="text" id="allergies" name="allergies" placeholder="Pet Allergies..">
-
-    <label for="nname">Pet Food</label>
-    <input type="text" id="pfood" name="petfood" placeholder="Pet Food..">
-
-    <label for="nname">Microchip ID</label>
-    <input type="text" id="micro" name="microchip" placeholder="Microchip ID..">
-
-
-    <input type="submit" value="Submit">
-
-  </form>
-</div>
-
-{{#if pets.length}}
-<div class="col-md-6 project-list">
-  <h3>Current Pets:</h3>
-
-  {{#each pets as |pet|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <h4><a href="/pet/{{pet.id}}">{{pet.name}}</a></h4>
-    </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{pet.id}}">DELETE</button>
-    </div>
-  </div>
-  {{/each}}
-</div>
-{{/if}}
-</div>
-
-<script src="./js/pet.js"></script
