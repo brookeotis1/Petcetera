@@ -11,7 +11,6 @@ const ownerdata = [
     id: 2,
     firstName: 'Peggy',
     lastName: 'Rawlings',
-    zip: 52308,
     bio: 'I apologize for anything I post while hungry.',
   },
   {
