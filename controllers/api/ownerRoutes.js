@@ -2,12 +2,12 @@ const router = require('express').Router();
 const { Owner } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
-//creates new owner
-router.post('/', async (req, res) => {
+//updates user profile
+router.put('/user/:id', async (req, res) => {
   try {
-    const newOwner = await Owner.create({
+    const completeUser = await User.create({
       ...req.body,
-      user_id: req.session.user_id,
+      userId: req.session.id,
     });
 
     res.status(200).json(newOwner);
@@ -17,10 +17,10 @@ router.post('/', async (req, res) => {
 });
 
 // GET one owner
-router.get('/owner/:id', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
   console.log('line 21');
   try {
-    const dbOwnerData = await Owner.findByPk(req.params.id, {
+    const dbUserData = await Owner.findByPk(req.params.id, {
       include: [
         {
           model: owner,
