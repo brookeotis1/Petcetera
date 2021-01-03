@@ -2,8 +2,23 @@ const router = require('express').Router();
 const { Owner } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
+//creates new owner
+router.post('/', async (req, res) => {
+  try {
+    const newOwner = await Owner.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newOwner);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // GET one owner
 router.get('/owner/:id', async (req, res) => {
+  console.log('line 21');
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -24,20 +39,6 @@ router.get('/owner/:id', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  }
-});
-
-//creates new owner
-router.post('/', async (req, res) => {
-  try {
-    const newOwner = await Owner.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-
-    res.status(200).json(newOwner);
-  } catch (err) {
-    res.status(400).json(err);
   }
 });
 
