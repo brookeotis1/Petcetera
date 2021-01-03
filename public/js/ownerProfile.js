@@ -1,14 +1,17 @@
-const createOwnerFormHandler = async (event) => {
+const OwnerFormHandler = async (event) => {
   event.preventDefault();
 
   const firstName = document.querySelector('#firstName').value.trim();
   const lastName = document.querySelector('#lastName').value.trim();
+  const phone = document.querySelector('#phone').value.trim();
+  const zip = document.querySelector('#zip').value.trim();
   const bio = document.querySelector('#bio').value.trim();
 
   if (firstName && lastName && bio) {
+    console.log('made it');
     const response = await fetch(`/api/owner`, {
       method: 'POST',
-      body: JSON.stringify({ firstName, lastName, bio }),
+      body: JSON.stringify({ firstName, lastName, phone, zip, bio }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -40,7 +43,7 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.ownerProfile-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', OwnerFormHandler);
 
 // document
 //   .querySelector('.ownerProfile-list')
