@@ -9,7 +9,7 @@ const OwnerFormHandler = async (event) => {
 
   if (firstName && lastName && phone && zip && bio) {
     console.log('made it');
-    const response = await fetch(`/api/owner/owner`, {
+    const response = await fetch(`/api/owner`, {
       method: 'POST',
       body: JSON.stringify({ firstName, lastName, phone, zip, bio }),
       headers: {

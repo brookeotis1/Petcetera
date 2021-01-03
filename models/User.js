@@ -35,6 +35,23 @@ User.init(
         len: [3],
       },
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone: {
+      type: DataTypes.STRING,
+    },
+    zip: {
+      type: DataTypes.INTEGER,
+    },
+    bio: {
+      type: DataTypes.TEXT,
+    },
   },
   {
     hooks: {

@@ -2,31 +2,6 @@ const router = require('express').Router();
 const { Owner } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
-// GET one owner
-router.get('/owner/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the owner
-    try {
-      const dbOwnerData = await Owner.findByPk(req.params.id, {
-        include: [
-          {
-            model: Pet,
-            attributes: ['id', 'petname', 'nickname', 'species', 'breed'],
-          },
-        ],
-      });
-      const owner = dbOwnerData.get({ plain: true });
-      res.render('ownerProfile', { owner, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
-
 //creates new owner
 router.post('/', async (req, res) => {
   try {
@@ -38,6 +13,27 @@ router.post('/', async (req, res) => {
     res.status(200).json(newOwner);
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+// GET one owner
+router.get('/owner/:id', async (req, res) => {
+  console.log('line 21');
+  try {
+    const dbOwnerData = await Owner.findByPk(req.params.id, {
+      include: [
+        {
+          model: owner,
+          attributes: ['firstName', 'lastName', 'phone', 'zip', 'bio'],
+        },
+      ],
+    });
+    const owner = dbOwnerData.get({ plain: true });
+
+    res.render('ownerProfile', { owner, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 

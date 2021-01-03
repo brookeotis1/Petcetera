@@ -26,9 +26,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/ownerProfile', async (req, res) => {
+  try {
+    // const dbOwnerProfile = await Owner.findByPk
+    console.log(req.session);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
@@ -36,19 +46,19 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/owner/:id', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
   try {
-    const dbOwnerData = await Owner.findByPk(req.params.id, {
-      include: [
-        {
-          model: Owner,
-          attributes: ['id', 'firstName', 'lastName', 'bio'],
-        },
-      ],
+    const dbUserData = await Owner.findByPk(req.params.id, {
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['id', 'firstName', 'lastName', 'bio'],
+      //   },
+      // ],
     });
-    const owner = dbOwnerData.get({ plain: true });
+    const user = dbUserData.get({ plain: true });
     // Send over the 'loggedIn' session variable to the 'gallery' template
-    res.render('profile', { profile, loggedIn: req.session.loggedIn });
+    res.render('ownerProfile', { user });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
