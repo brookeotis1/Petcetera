@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { truncate } = require('./User');
+const { User } = require('./User');
 
 class Owner extends Model {}
 
@@ -15,13 +15,16 @@ Owner.init(
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'firstName',
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'lastName',
     },
     bio: {
       type: DataTypes.TEXT,
+      defaultValue: 'bio',
     },
   },
   {
