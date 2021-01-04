@@ -6,7 +6,7 @@ class Owner extends Model {}
 
 Owner.init(
   {
-    id: {
+    ownerId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

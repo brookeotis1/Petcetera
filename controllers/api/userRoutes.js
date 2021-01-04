@@ -4,12 +4,7 @@ const { User } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create(req.body);
-
-    //   username: req.body.username,
-    //   email: req.body.email,
-    //   password: req.body.password,
-    // });
+    const dbUserData = await User.findOne({ where: { email: req.body.email } });
 
     req.session.save(() => {
       req.session.id = dbUserData.id;
