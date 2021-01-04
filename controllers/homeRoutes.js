@@ -5,10 +5,11 @@ const { User } = require('../models');
 // Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
   try {
+    console.log(req.body.owner_id);
     const loggedIn = req.session.loggedIn;
     if (loggedIn) {
-      const userId = req.session.user_id;
-      if (userId === undefined) {
+      const ownerId = req.body.owner_id;
+      if (ownerId === undefined) {
         res.render('ownerForm');
       } else {
         res.render('homepage', {

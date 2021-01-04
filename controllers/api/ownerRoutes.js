@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
       lastName: req.body.lastName,
       bio: req.body.bio,
     });
-    res.render('homepage');
+
     res.status(200).json(ownerdb);
   } catch (err) {
     res.status(400).json(err);
