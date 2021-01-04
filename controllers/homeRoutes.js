@@ -6,7 +6,6 @@ const { User } = require('../models');
 router.get('/', async (req, res) => {
   try {
     const loggedIn = req.session.loggedIn;
-    console.log(loggedIn);
     if (loggedIn) {
       const userId = req.session.user_id;
       if (userId === undefined) {
