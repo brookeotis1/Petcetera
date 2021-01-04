@@ -3,7 +3,7 @@ const { Owner } = require('../../models');
 //const withAuth = require('../../utils/auth');
 
 //updates owner profile
-router.post('/owner', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     console.log('roputerpost');
     const ownerdb = await Owner.create({
