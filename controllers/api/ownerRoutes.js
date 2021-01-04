@@ -7,8 +7,9 @@ router.post('/', async (req, res) => {
   try {
     console.log('roputerpost');
     const ownerdb = await Owner.create({
-      ...req.body,
-      ownerId: req.session.id,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      bio: req.body.bio,
     });
 
     res.status(200).json(ownerdb);
