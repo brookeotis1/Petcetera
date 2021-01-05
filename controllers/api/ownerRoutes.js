@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       bio: req.body.bio,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(ownerdb);
