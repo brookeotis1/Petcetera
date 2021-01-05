@@ -1,15 +1,25 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Owner } = require('../models');
+
 //const withAuth = require('../utils/auth');
 
-// Prevent non logged in users from viewing the homepage
+//Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.Ye
 router.get('/', async (req, res) => {
   try {
-    console.log(req.body.owner_id);
+    console.log(req.body);
+
     const loggedIn = req.session.loggedIn;
     if (loggedIn) {
-      const ownerId = req.body.owner_id;
-      if (ownerId === undefined) {
+      console.log('here');
+
+      let user = await User.findByPk(req.session.user_id, {
+        include: [Owner],
+      });
+
+      console.log(req.session);
+      console.log(user);
+      //const ownerId = req.body.owner_id;
+      if (user.owner === null) {
         res.render('ownerForm');
       } else {
         res.render('homepage', {
@@ -18,7 +28,7 @@ router.get('/', async (req, res) => {
         });
       }
     } else {
-      console.log(req.session);
+      //console.log(req.session);
       res.render('login', {});
     }
   } catch (err) {
