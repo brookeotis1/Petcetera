@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const petRoutes = require('./petRoutes');
+//const petRoutes = require('./petRoutes');
 const ownerRoutes = require('./ownerRoutes');
 
 router.use('/users', userRoutes);
