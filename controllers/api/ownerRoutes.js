@@ -13,27 +13,27 @@ router.post('/', async (req, res) => {
       bio: req.body.bio,
       user_id: req.session.user_id,
     });
-
+    res.render('homepage');
     res.status(200).json(ownerdb);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// GET one owner
-router.get('/owner/:id', async (req, res) => {
-  console.log('line 21');
-  try {
-    const dbOwnerData = await Owner.findByPk(req.params.id);
+// // GET one owner
+// router.get('/owner/:id', async (req, res) => {
+//   console.log('line 21');
+//   try {
+//     const dbOwnerData = await Owner.findByPk(req.params.id);
 
-    const owner = dbOwnerData.get({ plain: true });
+//     const owner = dbOwnerData.get({ plain: true });
 
-    res.render('homepage', { owner, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render('homepage', { owner, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // //delete owner
 

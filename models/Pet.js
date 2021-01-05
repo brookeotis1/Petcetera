@@ -27,10 +27,6 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    zip: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     birthdate: {
       type: DataTypes.DATEONLY,
       allowNull: false,
