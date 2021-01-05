@@ -57,7 +57,7 @@ const PetFormHandler = async (event) => {
 // };
 
 document
-  .querySelector('.ownerProfile-form')
+  .querySelector('.petProfile-form')
   .addEventListener('submit', OwnerFormHandler);
 
 // // document
