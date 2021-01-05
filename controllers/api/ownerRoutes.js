@@ -5,12 +5,13 @@ const { response } = require('express');
 
 //updates owner profile
 router.post('/', async (req, res) => {
+  console.log('database');
   try {
     const ownerdb = await Owner.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       bio: req.body.bio,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(ownerdb);
