@@ -3,7 +3,7 @@ const { User, Owner } = require('../models');
 
 //const withAuth = require('../utils/auth');
 
-//Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.Ye
+//Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.
 router.get('/', async (req, res) => {
   try {
     const loggedIn = req.session.loggedIn;
@@ -16,12 +16,14 @@ router.get('/', async (req, res) => {
         res.render('ownerForm');
         return;
       } else {
-        res.render('homepage', {
-          loggedIn: req.session.loggedIn,
-        });
+        res.render('homepage');
+        // {
+        //   loggedIn: req.session.loggedIn,
+        // });
       }
     } else {
       res.render('login', {});
+      return;
     }
   } catch (err) {
     res.status(500).json(err);
