@@ -29,8 +29,8 @@ Owner.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: User,
+        key: 'user_id',
       },
     },
   },

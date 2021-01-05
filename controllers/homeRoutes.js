@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
       let user = await User.findByPk(req.session.user_id, {
         include: [Owner],
       });
-      if (user.owner === null) {
+
+      if (user.owner.id === null) {
         res.render('ownerForm');
         return;
       } else {
