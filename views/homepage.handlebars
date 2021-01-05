@@ -19,7 +19,7 @@
       </div>
 
       <div>
-        <button type="button" class="btn btn-primary" id="addPetBtn">Add a Pet</button>
+        <button type="button" class="btn btn-primary" id="addPetBtn" onclick="addPet()">Add a Pet</button>
       </div>
 
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
@@ -37,9 +37,13 @@
 
       <script>
         //button handler 
-        document.getElementById("addPetBtn").addEventListener("click", function () {
+        function addPet() {
+          console.log("addPet clicked")
           document.location.replace('/views/petForm');
-        });
+        }
+
+        // });
+
         //User Location
         var x = document.getElementById("demo");
         function getLocation() {
