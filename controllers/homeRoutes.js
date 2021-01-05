@@ -15,6 +15,10 @@ router.get('/', async (req, res) => {
       });
 
       if (user.owner.id === null) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 032306aaa0bb876b6fca1b8eeed4b463a9176940
         res.render('ownerForm');
         return;
       } else {
