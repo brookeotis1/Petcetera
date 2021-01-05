@@ -14,8 +14,7 @@ router.get('/', async (req, res) => {
         include: [Owner],
       });
 
-      if (user.owner.id === null) {
-
+      if (user.owner === null) {
         res.render('ownerForm');
         return;
       } else {
