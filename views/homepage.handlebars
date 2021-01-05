@@ -81,11 +81,13 @@
 
           //Display Yelp Results
           $.ajax(settings).done(function (response) {
+            console.log(response);
             var yelpBusiness = response.businesses;
             let yelpResults;
             for (let i = 0; i < 30; i++) {
               let yelpName = yelpBusiness[i].name
               let yelpURL = yelpBusiness[i].url
+              let rating = yelpBusiness[i].rating
               yelpResults = document.createElement('div');
               yelpResults.id = "yelp"; //Assign div id
               yelpResults.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
