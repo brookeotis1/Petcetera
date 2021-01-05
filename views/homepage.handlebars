@@ -1,90 +1,27 @@
-<!--Homepage displays pet info and yelp API-->
-<!DOCTYPE html>
-<html>
-<title>Petbook Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" src="style.css">
-</link>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="script.js"></script>
-<style>
-  html,
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: "Open Sans", sans-serif
-  }
-</style>
-
-<body class="w3-theme-l5" class="pet">
-
-  <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
-        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i
-          class="fa fa-home w3-margin-right"></i>Petcetera</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Forum"><i
-          class="fa fa-globe"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-        title="Account Settings"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i
-          class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
-        title="My Account">
-      </a>
-    </div>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-  </div>
-
-  <!-- Page Container -->
+<!-- Page Container -->
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
-    <!-- Profile -->
-    <div class="w5-card w5-round w5-white">
-      <div class="w3-container">
-        <h4 class="w3-center">{{firstName}} {{lastName}}</h4>
-        {{!-- <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Owner Pic"></p> --}}
-        <hr>
-        <p><i class="fa fa-heart-o fa-fw w3-margin-right w3-text-theme"></i>{{bio}}</p>
-      </div>
-    </div>
-    <!-- The Grid -->
+     <!-- The Grid -->
     <div class="w3-row">
       <!-- Left Column -->
       <div class="w5-col m5">
-        <!-- Profile -->
+        <!-- Owner Info-->
         <div class="w5-card w5-round w5-white">
           <div class="w3-container">
-            <h4 class="w3-center">{{PetName}}</h4>
-            <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Pet Pic"></p>
+            <h4 class="w3-center">PetCetera Profile: {{firstName}}</h4>
             <hr>
-            <p><i class="fa fa-heart-o fa-fw w3-margin-right w3-text-theme"></i>{{Species}}</p>
-            <p><i class="fa fa-heart fa-fw w3-margin-right w3-text-theme"></i>{{Breed}}</p>
-            <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{{Address}}</p>
-            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>{{Birthdate}}</p>
-            <p><i class="fa fa-microchip fa-fw w3-margin-right w3-text-theme"></i>{{MicrochipID}}</p>
-          </div>
+            </div>
         </div>
-        <br>
 
-        <!-- End Left Column -->
-      </div>
+        <div>
+          <h4>Pet Info</h4>
+          <p>Insert handlebar for pet things here</p>
+        </div>
 
-      <!-- Middle Column -->
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+<div>
+  <button>Add a Pet</button>
+</div>
+
+<div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <h4><i class="fa fa-location-arrow fa-fw w3-margin-right w3-text-theme"></i>View Providers Near You</h4><br>
         <div id="yelpResults"></div>
         <button onclick="getLocation()">Allow Access to Location</button>
@@ -94,23 +31,10 @@
         <p><button onclick="yelpSearch()" class="w3-button w3-dark-grey" id="yelpBtn">Search</button></p>
       </div>
 
-      <!-- End Middle Column -->
-    </div>
 
 
-    <!-- End Grid -->
-  </div>
 
-  <!-- End Page Container -->
-  </div>
-  <br>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-theme-d5">
-    <p>Petcetera</p>
-  </footer>
-
-  <script>
+ <script>
     //User Location
     var x = document.getElementById("demo");
     function getLocation() {
@@ -180,8 +104,3 @@
       }
     }
   </script>
-
-
-</body>
-
-</html>
