@@ -18,8 +18,10 @@ router.get('/', async (req, res) => {
       console.log(user);
       //const ownerId = req.body.owner_id;
       if (user.owner === null) {
+        console.log('ownerForm');
         res.render('ownerForm');
       } else {
+        console.log('homepage');
         res.render('homepage', {
           //Pass the logged in flag to the template
           //loggedIn: req.session.loggedIn,
@@ -30,16 +32,9 @@ router.get('/', async (req, res) => {
       }
     } else {
       //console.log(req.session);
+      console.log('login');
       res.render('login', {});
     }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/homepage', async (req, res) => {
-  try {
-    res.render('/');
   } catch (err) {
     res.status(500).json(err);
   }
