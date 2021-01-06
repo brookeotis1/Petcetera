@@ -7,6 +7,7 @@ const petdata = [
     nickname: 'Bingo',
     species: 'Dog',
     breed: 'Border Collie',
+    age: '7 months',
     microchipId: '566789',
   },
   {
@@ -15,7 +16,7 @@ const petdata = [
     nickname: 'Casey',
     species: 'Dog',
     breed: 'Poodle',
-    food: 'K9 food',
+    age: '10',
     microchipId: '456567',
   },
   {
@@ -24,6 +25,7 @@ const petdata = [
     nickname: 'Panda',
     species: 'Cat',
     breed: 'Siamese',
+    age: '3 years',
     microchipId: '999880',
   },
   {
@@ -32,6 +34,7 @@ const petdata = [
     nickname: 'R',
     species: 'bird',
     breed: 'Cockatoo',
+    age: '35',
     microchipId: '9998837',
   },
 ];

@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
       nickname: req.body.nickname,
       species: req.body.species,
       breed: req.body.breed,
-      birthdate: req.body.birthdate,
+      age: req.body.age,
       microchip: req.body.microchip,
     });
     req.session.save(() => {

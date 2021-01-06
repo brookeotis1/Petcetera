@@ -30,7 +30,8 @@ Pet.init(
     },
     age: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: null,
     },
     microchip: {
       type: DataTypes.STRING,
