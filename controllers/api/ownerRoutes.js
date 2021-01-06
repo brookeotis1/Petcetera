@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
       bio: req.body.bio,
       user_id: req.session.user_id,
     });
-    //res.render('homepage');
+    res.render('homepage');
     res.status(200).json(ownerdb);
   } catch (err) {
     res.status(400).json(err);

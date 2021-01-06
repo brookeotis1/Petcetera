@@ -66,16 +66,6 @@ nav a:hover {
   background-color: var(--dark);
 }
 
-.gallery {
-  flex: 4;
-  background-color: #fff;
-  padding: 50px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .btn-no-style {
   background: none;
   border: none;
@@ -92,18 +82,7 @@ img {
   height: auto;
 }
 
-.painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
 
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-}
 
 /* CARDS */
 .card {
@@ -144,17 +123,6 @@ img {
   font-weight: bold;
 }
 
-.gallery-name {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
-}
-
 /* LAYOUT */
 .container {
   display: flex;
@@ -183,6 +151,17 @@ img {
   border: 2px solid #1a1d29;
 }
 
+#rocko {
+  position: absolute;
+  width: 350px;
+  max-width: 100%;
+  right: 15%;
+  bottom: 15%;
+  margin: 10px;
+  border: 2px solid #1a1d29;
+}
+
 .petbackground {
   background-image: url("/debugpetproject/public/images/background.png")
 }
+

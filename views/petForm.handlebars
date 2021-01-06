@@ -1,94 +1,35 @@
-     
 <div class="row justify-space-between-md">
   <div class="ownerProfile-card">
-    <h2 class="page-title">Pet Profile</h2>
-    <form class="form petProfile-form" action="/api/pet" method="POST">
-      <div class="container">
-  <div class="container">
-           <label for="pname">Pet Name</label>
-          <input type="text" id="pname" name="petname" placeholder="Pet name..">
-
-          <label for="nname">Pet Nickname</label>
-          <input type="text" id="nname" name="nickname" placeholder="Pet Nickname..">
-
-          <label for="species">Species</label>
-          <input type="text" id="species" name="species" placeholder="Species..">
-
-
-    <label for="breed">Pet Breed</label>
-    <input type="text" id="breed" name="breed" placeholder="Breed..">
-
-
-          <label for="birthdate">Pet Birthdate</label>
-          <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
-
-
-    <label for="weight">Pet Weight</label>
-    <input type="text" id="weight" name="weight" placeholder="Pet Weight..">
-
-
-          <label for="breed">Allergies</label>
-          <input type="text" id="breed" name="allergies" placeholder="Breed..">
-
-          <label for="food">Food</label>
-          <input type="text" id="food" name="food" placeholder="Favorite Food..">
-
-
-          <label for="weight">Microchip Id</label>
-          <input type="text" id="weight" name="microchip" placeholder="Microchip Id..">
-
-          <div class="form-group">
-            <button class="btn btn-primary" type="button" id="submitPetForm" onClick=PetFormHandler()>Create Owner Profile</button>
-          </div>
-        </form>
+    <h2 class="page-title"> Profile</h2>
+    <form class="form petProfile-form">
+      <div class="form-group">
+        <label for="petname">petname</label>
+        <input class="form-input" type="text" id="petname" />
       </div>
-
-      <img src="./images/panda.jpg" alt="dog" id="panda">
-  
-</div>
-<script>
-  const PetFormHandler = async (event) => {
-  event.preventDefault();
-  //alert(event);
-
-  const petName = document.querySelector('#pname').value.trim();
-  const nickName = document.querySelector('#nname').value.trim();
-  const species = document.querySelector('#species').value.trim();
-  const breed = document.querySelector('#breed').value.trim();
-  const birthdate = document.querySelector('#bdate').value.trim();
-  const weight = document.querySelector('#weight').value.trim();
- }
-
-  if (pname && species) {
-    console.log('made it');
-    const response = fetch(`/api/pet`, {
-      method: 'POST',
-      body: JSON.stringify({
-        pname,
-        nname,
-        species,
-        breed,
-        bdate,
-        weight,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    console.log(response);
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to create pet profile');
-  }
-};
-  
-
-
-document
-  .querySelector('.petProfile-form')
-  .addEventListener('submitPetForm', PetFormHandler);
-
-</script>
-
+      <div class="form-group">
+        <label for="nickname">Nickname?(optional)</label>
+        <input class="form-input" type="text" id="nickname" />
+      </div>
+      <div class="form-group">
+        <label for="species">Species</label>
+        <input class="form-input" type="text" id="species" />
+      </div>
+      <div class="form-group">
+        <label for="breed">Breed</label>
+        <input class="form-input" type="text" id="breed" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input class="form-input" type="text" id="age" />
+      </div>
+      <div class="form-group">
+        <label for="microchip">Microchip Id (optional)</label>
+        <input class="form-input" type="text" id="microchip" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create Pet Profile</button>
+      </div>
+    </form>
+  </div>
+  <img src="./images/panda.jpg" alt="dog" id="panda">
+  <script src="./js/petProfile.js"></script>
