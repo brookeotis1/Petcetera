@@ -212,3 +212,113 @@
     }
   }
 </script>
+=======
+         </div>
+         <br>
+         
+         <div class="w3-card w3-round w3-white w3-center">
+           <div class="w3-container">
+             <p>Calendar</p>
+            </div>
+         </div>
+         <br>
+         
+         <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+           <p>Placeholder</p>
+         </div>
+         <br>
+                 
+       <!-- End Right Column -->
+       </div>
+       
+     <!-- End Grid -->
+     </div>
+     
+   <!-- End Page Container -->
+   </div>
+   <br>
+   </div>
+
+      <script>
+        //button handler 
+        function addPet() {
+
+        console.log("addPet clicked")
+          document.location.replace('/pet');
+
+        }
+
+        // });
+
+        //User Location
+        var x = document.getElementById("demo");
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+          var latitude = position.coords.latitude;
+          localStorage.setItem("lat", latitude);
+          var longitude = position.coords.longitude;
+          localStorage.setItem("long", longitude);
+        }
+
+        //Yelp API search 
+        $("#yelpBtn").on("click", function () {
+          var provInput = document.getElementById("searchProv").value;
+          localStorage.setItem("provTerm", provInput);
+          const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search",
+            "method": "GET",
+            "headers": {
+              "authorization": "Bearer OtPHKCuY1jmOsGPUZzwRiTMPh801290sRO3XbX026ZzZ2WD5lrTKhwb5WLX9tk_vsi_HJA_dvlqm8Y8mVfiCsWilSh9jwSykvB1QcsLTFEhmcGqvOSxFrnx8fCarX3Yx",
+            },
+            "data": {
+              "term": localStorage.getItem('provTerm'),
+              "latitude": localStorage.getItem('lat'),
+              "longitude": localStorage.getItem('long'),
+            }
+          };
+
+          //Display Yelp Results
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            var yelpBusiness = response.businesses;
+            let yelpResults;
+            for (let i = 0; i < 10; i++) {
+              let yelpName = yelpBusiness[i].name
+              let yelpURL = yelpBusiness[i].url
+              let rating = yelpBusiness[i].rating
+              yelpResults = document.createElement('div');
+              yelpResults.id = "yelp"; //Assign div id
+              yelpResults.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
+              yelpResults.style.background = "white";
+              a = document.createElement('a');
+              a.href = yelpURL; // Insted of calling setAttribute 
+              a.innerHTML = yelpName // <a>INNER_TEXT</a>
+              yelpResults.appendChild(a); // Append the link to the div
+              $("#yelpResults").prepend(yelpResults); // And append the div to the document body
+            }
+          })
+        })
+
+
+        // Used to toggle the menu on smaller screens when clicking on the menu button
+        function openNav() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+      </script>
+
