@@ -13,24 +13,8 @@
      <div class="w3-row">
        <!-- Left Column -->
        <div class="w3-col m3">
-         <!-- Profile -->
-         <div class="w3-card w3-round w3-white">
-           <div class="w3-container">
-          <!--Handlebar referencing Pet Info will go here-->
-            <h4 class="w3-center">Pet Name</h4>
-            <p class="w3-center"><img src="" class="w3-circle" style="height:106px;width:106px" alt="Pet Pic"></p>
-            <hr>
-            <p><i class="fa fa-heart-o fa-fw w3-margin-right w3-text-theme"></i>Species</p>
-         <p><i class="fa fa-heart fa-fw w3-margin-right w3-text-theme"></i>Breed</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>Address</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>Birthdate</p>
-         <p><i class="fa fa-microchip fa-fw w3-margin-right w3-text-theme"></i>Microchip ID</p>
-         <button type="button" class="btn btn-primary" id="addPetBtn" onclick="addPet()">Update Pet</button>
-      </div>
-         <br>
-        </div>
-         </div>
-         <br>
+         
+
 
          <!-- Profile -->
          <div class="w3-card w3-round w3-white">
@@ -49,6 +33,11 @@
         </div>
          </div>
          <br>
+
+
+
+     
+
 
          <!-- Profile -->
          <div class="w3-card w3-round w3-white">
@@ -143,8 +132,13 @@
       <script>
         //button handler 
         function addPet() {
-          document.location.replace('/');
+
+        console.log("addPet clicked")
+          document.location.replace('/pet');
+
         }
+
+        // });
 
         //User Location
         var x = document.getElementById("demo");
