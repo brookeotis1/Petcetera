@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="action_page.php">
+  <form action="/api/pet" method="POST">
 
     <label for="pname">Pet Name</label>
     <input type="text" id="pname" name="petname" placeholder="Pet name..">
@@ -11,13 +11,13 @@
     <input type="text" id="species" name="species" placeholder="Species..">
 
     <label for="breed">Pet Breed</label>
-    <input type="text" id="breed" name="petbreed" placeholder="Breed..">
+    <input type="text" id="breed" name="breed" placeholder="Breed..">
 
     <label for="birthdate">Pet Birthdate</label>
     <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
 
     <label for="weight">Pet Weight</label>
-    <input type="text" id="weight" name="petweight" placeholder="Pet Weight..">
+    <input type="text" id="weight" name="weight" placeholder="Pet Weight..">
 
     <label for="breed">Allergies</label>
     <input type="text" id="breed" name="allergies" placeholder="Breed..">
@@ -27,3 +27,8 @@
 
     <label for="weight">Microchip Id</label>
     <input type="text" id="weight" name="microchip" placeholder="Microchip Id..">
+
+    <button type="submit">Submit</button>
+
+    </form>
+</div>
