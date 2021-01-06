@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
       nickname: req.body.nickname,
       species: req.body.species,
       breed: req.body.breed,
-      birthdate: req.body.birthdate,
+      age: req.body.age,
       microchip: req.body.microchip,
     });
     req.session.save(() => {
@@ -28,20 +28,6 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-//create pet profile
-// router.post('/', async (req, res) => {
-//   try {
-//     console.log(req.body);
-//     const petData = await Pet.create({
-//       ...req.body,
-//       user_id: req.session.user_id,
-//     });
-//     //res.json(petData)
-//     res.render(petForm, { pet: petData });
-//   } catch (err) {
-//     res.json(err);
-//   }
-// });
 
 //update profile
 router.put('/', async (req, res) => {
