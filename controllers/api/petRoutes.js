@@ -1,5 +1,3 @@
-
-
 const router = require('express').Router();
 const { Pet } = require('../../models');
 //const { response } = require('express');
@@ -20,7 +18,7 @@ res.render(petForm, {pet:petData})
         res.json(err);
     }
     
-})
+})})
 
 //update profile
 router.put('/', async (req,res) => {
@@ -64,5 +62,4 @@ router.delete('/:id', async (req, res) => {
 
 
 
-module.exports = router
-
+module.exports = router;
