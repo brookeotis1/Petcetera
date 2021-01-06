@@ -1,16 +1,11 @@
-
+     
 <div class="row justify-space-between-md">
   <div class="ownerProfile-card">
     <h2 class="page-title">Pet Profile</h2>
-    <form class="form petProfile-form">
+    <form class="form petProfile-form" action="/api/pet" method="POST">
       <div class="container">
-        <form action="action_page.php">
-
-<div class="container">
-  <form action="/api/pet" method="POST">
-
-
-          <label for="pname">Pet Name</label>
+  <div class="container">
+           <label for="pname">Pet Name</label>
           <input type="text" id="pname" name="petname" placeholder="Pet name..">
 
           <label for="nname">Pet Nickname</label>
@@ -43,20 +38,57 @@
           <input type="text" id="weight" name="microchip" placeholder="Microchip Id..">
 
           <div class="form-group">
-            <button class="btn btn-primary" type="submit">Create Owner Profile</button>
+            <button class="btn btn-primary" type="button" id="submitPetForm" onClick=PetFormHandler()>Create Owner Profile</button>
           </div>
         </form>
       </div>
 
       <img src="./images/panda.jpg" alt="dog" id="panda">
-
-      <script src="./js/ownerProfile.js"></script>
-
-    <label for="weight">Microchip Id</label>
-    <input type="text" id="weight" name="microchip" placeholder="Microchip Id..">
-
-    <button type="submit">Submit</button>
-
-    </form>
+  
 </div>
+<script>
+  const PetFormHandler = async (event) => {
+  event.preventDefault();
+  //alert(event);
+
+  const petName = document.querySelector('#pname').value.trim();
+  const nickName = document.querySelector('#nname').value.trim();
+  const species = document.querySelector('#species').value.trim();
+  const breed = document.querySelector('#breed').value.trim();
+  const birthdate = document.querySelector('#bdate').value.trim();
+  const weight = document.querySelector('#weight').value.trim();
+ }
+
+  if (pname && species) {
+    console.log('made it');
+    const response = fetch(`/api/pet`, {
+      method: 'POST',
+      body: JSON.stringify({
+        pname,
+        nname,
+        species,
+        breed,
+        bdate,
+        weight,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response);
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to create pet profile');
+  }
+};
+  
+
+
+document
+  .querySelector('.petProfile-form')
+  .addEventListener('submitPetForm', PetFormHandler);
+
+</script>
 
