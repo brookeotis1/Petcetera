@@ -6,19 +6,16 @@ const { User, Owner } = require('../models');
 //Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.Ye
 router.get('/', async (req, res) => {
   try {
-    console.log(req.body);
-
     const loggedIn = req.session.loggedIn;
     if (loggedIn) {
       console.log('here');
 
-      let user = await User.findByPk(req.session.user_id, {
+      let user = await User.findByPk(req.body.user_id, {
         include: [Owner],
       });
 
-      console.log(req.session);
-      console.log(user);
-      //const ownerId = req.body.owner_id;
+      const ownerId = req.body.owner_id;
+      console.log(ownerId);
       if (user.owner === null) {
         res.render('ownerForm');
       } else {
@@ -39,15 +36,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
 router.get('/petForm', async (req, res) => {
   try {
-    res.render("petForm")
-  }
-  catch (err) {
+    res.render('petForm');
+  } catch (err) {
     res.status(500).json(err);
-}});
-
+  }
+});
 
 module.exports = router;
