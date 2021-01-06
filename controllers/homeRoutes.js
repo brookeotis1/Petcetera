@@ -19,7 +19,8 @@ router.get('/', async (req, res) => {
       if (user.owner === null) {
         res.render('ownerForm');
       } else {
-        res.render('/', {
+        console.log('homepage render');
+        res.render('homepage', {
           //Pass the logged in flag to the template
           //loggedIn: req.session.loggedIn,
           //Pass owner information to homepage
