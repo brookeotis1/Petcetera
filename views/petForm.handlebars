@@ -1,52 +1,14 @@
-
 <div class="row justify-space-between-md">
   <div class="ownerProfile-card">
-    <h2 class="page-title">Pet Profile</h2>
+    <h2 class="page-title"> Profile</h2>
     <form class="form petProfile-form">
-      <div class="container">
-        <form action="action_page.php">
-
-      <div class="container">
-      <form action="/api/pet" method="POST">
-
-
-          <label for="pname">Pet Name</label>
-          <input type="text" id="pname" name="petname" placeholder="Pet name..">
-
-          <label for="nname">Pet Nickname</label>
-          <input type="text" id="nname" name="nickname" placeholder="Pet Nickname..">
-
-          <label for="species">Species</label>
-          <input type="text" id="species" name="species" placeholder="Species..">
+      <div class="form-group">
+        <label for="petname">Pet Name:</label>
+        <input class="form-input" type="text" id="petname" />
+      </div>
 
 
-          <label for="breed">Pet Breed</label>
-          <input type="text" id="breed" name="breed" placeholder="Breed..">
-
-
-          <label for="birthdate">Pet Birthdate</label>
-          <input type="text" id="bdate" name="birthdate" placeholder="Pet Birthdate..">
-
-
-           {{!-- <label for="weight">Pet Weight</label>
-          <input type="text" id="weight" name="weight" placeholder="Pet Weight..">
-
-
-          <label for="breed">Allergies</label>
-          <input type="text" id="breed" name="allergies" placeholder="Breed..">
-
-          <label for="food">Food</label>
-          <input type="text" id="food" name="food" placeholder="Favorite Food.."> --}}
-
-
-          <label for="weight">Microchip Id</label>
-          <input type="text" id="weight" name="microchip" placeholder="Microchip Id..">
-
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit">Create Pet Profile</button>
-          </div>
-
-          <div class="form-group">
+                <div class="form-group">
             <button class="btn btn-primary" type="submit">Update Pet Profile</button>
           </div>
 
@@ -55,10 +17,37 @@
 
       <img src="./images/rocko.jpg" alt="bird" id="rocko">
 
-      <script src="./js/petProfile.js"></script>
+      <div class="form-group">
+        <label for="nickname">Nickname?(optional)</label>
+        <input class="form-input" type="text" id="nickname" />
+      </div>
 
-    
+      <div class="form-group">
+        <label for="nickname">Species</label>
+        <input class="form-input" type="text" id="species" />
+      </div>
 
+
+      <div class="form-group">
+        <label for="nickname">Breed</label>
+        <input class="form-input" type="text" id="breed" />
+      </div>
+
+      <div class="form-group">
+        <label for="nickname">Birthdate</label>
+        <input class="form-input" type="text" id="birthdate" />
+      </div>
+      <div class="form-group">
+        <label for="microchip">Microchip Id (optional)</label>
+        <input class="form-input" type="text" id="microchip" />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create Pet Profile</button>
+      </div>
     </form>
-</div>
+  </div>
 
+  <img src="./images/panda.jpg" alt="dog" id="panda">
+
+  <script src="./js/petProfile.js"></script>

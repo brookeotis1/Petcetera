@@ -24,6 +24,14 @@ const OwnerFormHandler = async (event) => {
   }
 };
 
+document
+  .querySelector('.ownerProfile-form')
+  .addEventListener('submit', OwnerFormHandler);
+
+// document
+//   .querySelector('.project-list')
+//   .addEventListener('click', delButtonHandler);
+
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
 //     const id = event.target.getAttribute('data-id');
@@ -39,11 +47,3 @@ const OwnerFormHandler = async (event) => {
 //     }
 //   }
 // };
-
-document
-  .querySelector('.ownerProfile-form')
-  .addEventListener('submit', OwnerFormHandler);
-
-// // document
-// //   .querySelector('.ownerProfile-list')
-// //   .addEventListener('click', delButtonHandler);
