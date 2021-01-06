@@ -1,15 +1,16 @@
 const PetFormHandler = async (event) => {
   event.preventDefault();
 
-  const firstName = document.querySelector('#pname').value.trim();
-  const lastName = document.querySelector('#nname').value.trim();
-  const bio = document.querySelector('#species').value.trim();
-  const firstName = document.querySelector('#breed').value.trim();
-  const lastName = document.querySelector('#bdate').value.trim();
-  const bio = document.querySelector('#weight').value.trim();
-  const firstName = document.querySelector('#').value.trim();
-  const lastName = document.querySelector('#bdate').value.trim();
-  const bio = document.querySelector('#weight').value.trim();
+
+  
+  const petName = document.querySelector('#name').value.trim();
+  const nickname = document.querySelector('#nickname').value.trim();
+  const species = document.querySelector('#species').value.trim();
+  const breed = document.querySelector('#breed').value.trim();
+  const birthdate = document.querySelector('#birthdate').value.trim();
+  const microchipID = document.querySelector('#microchipId').value.trim();
+  // const lastName = document.querySelector('#bdate').value.trim();
+  // const bio = document.querySelector('#weight').value.trim();
 
   if (petName && species) {
     console.log('made it');
@@ -21,10 +22,11 @@ const PetFormHandler = async (event) => {
         species,
         breed,
         birthdate,
-        weight,
-        allergies,
-        food,
         microchipId,
+        // weight,
+        // allergies,
+        // food,
+        
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -56,9 +58,9 @@ const PetFormHandler = async (event) => {
 //   }
 // };
 
-document
-  .querySelector('.petProfile-form')
-  .addEventListener('submit', petFormHandler);
+// document
+//   .querySelector('.petProfile-form')
+//   .addEventListener('submit', petFormHandler);
 
 // // document
 // //   .querySelector('.ownerProfile-list')
