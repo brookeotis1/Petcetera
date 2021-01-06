@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User, Owner } = require('../models');
 
-//const withAuth = require('../utils/auth');
-
 //Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.Ye
 router.get('/', async (req, res) => {
   try {
@@ -34,6 +32,14 @@ router.get('/', async (req, res) => {
       //console.log(req.session);
       res.render('login', {});
     }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/homepage', async (req, res) => {
+  try {
+    res.render('/');
   } catch (err) {
     res.status(500).json(err);
   }

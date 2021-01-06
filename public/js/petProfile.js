@@ -27,7 +27,7 @@ const PetFormHandler = async (event) => {
     console.log(response);
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('homepage');
     } else {
       alert('Failed to create pet profile');
     }
