@@ -1,33 +1,45 @@
 const router = require('express').Router();
 const { User, Owner } = require('../models');
+
 //const withAuth = require('../utils/auth');
 
-//Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.
-
+//Find out if user is logged in, then set up an owner profile if none exists. Then send to homepage.Ye
 router.get('/', async (req, res) => {
   try {
+    console.log(req.body);
+
     const loggedIn = req.session.loggedIn;
-    console.log(loggedIn);
     if (loggedIn) {
       console.log('here');
+
       let user = await User.findByPk(req.session.user_id, {
         include: [Owner],
       });
 
+      console.log(req.session);
+      console.log(user);
+      //const ownerId = req.body.owner_id;
       if (user.owner === null) {
         res.render('ownerForm');
-        return;
       } else {
-        res.render('homepage');
+        res.render('homepage', {
+          //Pass the logged in flag to the template
+          //loggedIn: req.session.loggedIn,
+          //Pass owner information to homepage
+          firstName: user.owner.firstName,
+          lastName: user.owner.lastName,
+        });
       }
     } else {
+      //console.log(req.session);
       res.render('login', {});
-      return;
     }
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/petForm', async (req, res) => {
   try {
@@ -36,5 +48,6 @@ router.get('/petForm', async (req, res) => {
   catch (err) {
     res.status(500).json(err);
 }});
+
 
 module.exports = router;
