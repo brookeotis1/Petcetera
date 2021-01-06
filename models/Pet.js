@@ -28,12 +28,12 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birthdate: {
-      type: DataTypes.DATEONLY,
+    age: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     microchip: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     owner_id: {
