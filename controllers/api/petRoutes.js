@@ -1,5 +1,13 @@
+
+
 const router = require('express').Router();
 const { Pet } = require('../../models');
+const { response } = require('express');
+
+router.get('/pet', (req, res) => {
+//   console.log('PET ROUTE FORM');
+//   res.render('petForm');
+// });
 
 //create pet profile
 router.post('/', async (req,res) => {
@@ -24,3 +32,4 @@ res.render(petForm, {pet:petData})
 
 
 module.exports = router
+
