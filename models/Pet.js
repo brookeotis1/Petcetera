@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { owner } = require('./Owner');
 
 class Pet extends Model {}
 
@@ -31,21 +32,16 @@ Pet.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    weight: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    allergies: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    food: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    microchipId: {
+    microchip: {
       type: DataTypes.INTEGER,
       allowNull: true,
+    },
+    owner_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: owner,
+        key: 'id',
+      },
     },
   },
   {

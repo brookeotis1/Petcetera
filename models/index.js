@@ -8,12 +8,12 @@ User.hasOne(Owner, {
 });
 
 Owner.hasMany(Pet, {
-  foreignKey: 'user_id',
+  foreignKey: 'owner_id',
   onDelete: 'CASCADE',
 });
 
 Pet.belongsTo(Owner, {
-  foreignKey: 'user_id',
+  foreignKey: 'owner_id',
 });
 
 module.exports = { User, Pet, Owner };
