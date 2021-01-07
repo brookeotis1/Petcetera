@@ -27,7 +27,8 @@ const PetFormHandler = async (event) => {
     console.log(response);
 
     if (response.ok) {
-      document.location.replace('homepage');
+      //alert('Pet added! Click home to return to your dashboard');
+      document.location.replace('/');
     } else {
       alert('Failed to create pet profile');
     }
