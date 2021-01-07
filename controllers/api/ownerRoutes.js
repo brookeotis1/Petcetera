@@ -5,7 +5,7 @@ const { response } = require('express');
 
 //updates owner profile
 router.post('/', async (req, res) => {
-  console.log('database');
+  console.log('ownerRoutes');
   try {
     const ownerdb = await Owner.create({
       firstName: req.body.firstName,
@@ -13,6 +13,7 @@ router.post('/', async (req, res) => {
       bio: req.body.bio,
       user_id: req.session.user_id,
     });
+
     res.render('homepage');
     res.status(200).json(ownerdb);
   } catch (err) {
