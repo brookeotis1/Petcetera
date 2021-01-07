@@ -3,7 +3,7 @@ const { Pet } = require('../../models');
 //const { response } = require('express');
 
 router.get('/pet', (req, res) => {
-  console.log('PET ROUTE FORM');
+  console.log('PET ROUTE');
   res.render('petForm');
 });
 
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', (req, res) => {
+router.get('/homepage', (req, res) => {
   console.log('homepage FORM');
   res.render('homepage');
 });
